@@ -18,6 +18,6 @@
   "homepage": "https://github.com/Swift1-creator/frontend-project-44#readme",
   "keywords": [],
   "bin": {
-    "code.": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js"
   }
 }
