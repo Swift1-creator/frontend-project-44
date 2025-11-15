@@ -24,6 +24,19 @@ brain-calc
 3. Сделайте файл исполняемым: `chmod +x ./bin/brain-gcd.js`.
 4. Запустите игру: `npx brain-gcd`.
 
-## Демонстрация игры
 
-### Успешный проход
+# Brain Games: Even
+
+Это игра "Проверка на чётность". В игре вам показывается число, и вы должны ответить "yes", если число чётное, или "no", если нечётное.
+
+## Установка
+
+```bash
+npm install -g your-package-name
+Запуск игры
+brain-even
+Пример игры
+Welcome to the Brain Games!
+May I have your name? Sam
+Hello, Sam!
+Answer "yes"
