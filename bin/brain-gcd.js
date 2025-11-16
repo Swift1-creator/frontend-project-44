@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
+const readlineSync = require('readline-sync');
 
-// Функция для нахождения НОД (используем алгоритм Евклида)
 const getGCD = (a, b) => {
   while (b !== 0) {
     const temp = b;
@@ -20,7 +19,7 @@ const playGame = () => {
   let countCorrectAnswers = 0;
 
   while (true) {
-    const num1 = Math.floor(Math.random() * 100) + 1; // числа от 1 до 100
+    const num1 = Math.floor(Math.random() * 100) + 1;
     const num2 = Math.floor(Math.random() * 100) + 1;
 
     const question = `${num1} ${num2}`;
@@ -37,10 +36,11 @@ const playGame = () => {
       console.log(`Let's try again, ${userName}!`);
       break;
     }
-  }
 
-  if (countCorrectAnswers >= 3) {
-    console.log(`Congratulations, ${userName}!`);
+    if (countCorrectAnswers >= 3) {
+      console.log(`Congratulations, ${userName}!`);
+      break;
+    }
   }
 };
 
