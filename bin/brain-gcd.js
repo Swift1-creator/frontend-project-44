@@ -2,43 +2,46 @@
 
 import readlineSync from 'readline-sync';
 
+// Функция для нахождения НОД (используем алгоритм Евклида)
 const getGCD = (a, b) => {
-  if (b === 0) {
-    return a;
+  while (b !== 0) {
+    const temp = b;
+    b = a % b;
+    a = temp;
   }
-  return getGCD(b, a % b);
+  return a;
 };
 
-const startGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+const playGame = () => {
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log('Find the greatest common divisor of given numbers.');
 
-  let correctAnswersCount = 0;
+  let countCorrectAnswers = 0;
 
   while (true) {
-    const num1 = Math.floor(Math.random() * 100) + 1;
+    const num1 = Math.floor(Math.random() * 100) + 1; // числа от 1 до 100
     const num2 = Math.floor(Math.random() * 100) + 1;
-    const question = `${num1} ${num2}`;
-    console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
 
+    const question = `${num1} ${num2}`;
     const correctAnswer = getGCD(num1, num2).toString();
 
-    if (answer === correctAnswer) {
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      correctAnswersCount += 1;
+      countCorrectAnswers += 1;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
   }
 
-  if (correctAnswersCount >= 3) {
-    console.log(`Congratulations, ${name}!`);
+  if (countCorrectAnswers >= 3) {
+    console.log(`Congratulations, ${userName}!`);
   }
 };
 
-startGame();
+playGame();
