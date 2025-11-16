@@ -1,6 +1,11 @@
 ## Hexlet tests and linter status:
 s[![Actions Status](https://github.com/Swift1-creator/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Swift1-creator/frontend-project-44/actions)
 
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Swift1-creator_frontend-project-44&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Swift1-creator_frontend-project-44)
+
+
+
 # brain-calc
 
 Запуск игры "Калькулятор":

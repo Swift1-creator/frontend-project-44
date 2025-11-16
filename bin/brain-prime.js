@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const readline = require('readline');
+const readline = require('node:readline');
 
 function isPrime(num) {
   if (num < 2) return false;

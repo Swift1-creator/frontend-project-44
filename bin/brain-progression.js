@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const readline = require('readline');
+const readline = require('node:readline');
 
 function generateProgression() {
   const length = Math.floor(Math.random() * 6) + 5; // от 5 до 10
