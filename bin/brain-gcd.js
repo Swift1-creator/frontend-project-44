@@ -34,14 +34,17 @@ const playGame = () => {
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      break;
+      return 1; // Возвращаем код ошибки
     }
 
     if (countCorrectAnswers >= 3) {
       console.log(`Congratulations, ${userName}!`);
-      break;
+      return 0; // Успешное завершение
     }
   }
 };
 
-playGame();
+// Запуск игры при выполнении скрипта
+if (require.main === module) {
+  process.exit(playGame());
+}
