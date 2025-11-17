@@ -40,12 +40,12 @@ const playGame = () => {
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return 1; // Ошибка
+      return 1; // Завершение с ошибкой
     }
 
     if (countCorrectAnswers >= 3) {
       console.log(`Congratulations, ${userName}!`);
-      return 0; // Успех
+      return 0; // Успешное завершение
     }
   }
 };
