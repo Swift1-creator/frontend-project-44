@@ -27,7 +27,11 @@ for (let i = 0; i < rounds; i++) {
   const progression = generateProgression(start, step, length);
 
   const missingIndex = getRandomInt(0, progression.length - 1);
-  const answer = readlineSync.question(`Question: ${progression.join(' ').slice(0, missingIndex * 2) + ' ... ' + progression.slice(missingIndex + 1).join(' ')}\nYour answer: `);
+  const progressionWithHidden = [...progression];
+  progressionWithHidden[missingIndex] = '..';
+
+  const question = `Question: ${progressionWithHidden.join(' ')}`;
+  const answer = readlineSync.question(`${question}\nYour answer: `);
   const correctAnswer = progression[missingIndex].toString();
 
   if (answer !== correctAnswer) {
