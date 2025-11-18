@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/Swift1-creator/frontend-project-44.git"
   },
   "author": "",
@@ -36,5 +36,6 @@
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
-  }
+  },
+  "type": "module"
 }
