@@ -1,42 +1,34 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync'
+import readlineSync from 'readline-sync';
 
 function isPrime(num) {
-  if (num < 2) return false
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) return false
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
   }
-return true
-}
-function brainPrime() {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".')
-  const name = readlineSync.question('May I have your name? ')
-  console.log(`Hello, ${name}
-!`)
-  const totalQuestions = 3
-
-  for (let i = 0; i < totalQuestions; i += 1) {
-    const number = Math.floor(Math.random() * 100) + 1
-    const correctAnswer = isPrime(number) ? 'yes' : 'no'
-
-    console.log(`Question: ${number}
-`)
-    const answer = readlineSync.question('Your answer: ')
-
-    if (answer.toLowerCase() !== correctAnswer) {
-      console.log(`'${answer}
-' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-      console.log(`Let's try again, ${name}
-!`)
-      return
-    }
-else {
-      console.log('Correct!')
-    }
+  return true;
 }
 
-  console.log(`Congratulations, ${name}
-!`)
+console.log('Welcome to the Brain Games!');
+const name = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${name}!`);
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+
+const rounds = 3;
+for (let i = 0; i < rounds; i++) {
+  const number = Math.floor(Math.random() * 100) + 1;
+  const question = `Question: ${number}`;
+  const answer = readlineSync.question(`${question}\nYour answer: `);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+
+  if (answer.toLowerCase() !== correctAnswer) {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${name}!`);
+    process.exit(0);
+  } else {
+    console.log('Correct!');
+  }
 }
-brainPrime()
+
+console.log(`Congratulations, ${name}!`);
