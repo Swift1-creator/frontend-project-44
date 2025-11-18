@@ -1,55 +1,39 @@
 #!/usr/bin/env node
 
-const readlineSync = require('readline-sync')
+import readlineSync from 'readline-sync';
 
-const getGCD = (a, b) => {
-  while (b !== 0) {
-    const temp = b
-    b = a % b
-    a = temp
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function gcd(a, b) {
+  if (b === 0) {
+    return a;
   }
-return a
-}
-const playGame = () => {
-  const userName = readlineSync.question('May I have your name? ')
-  console.log(`Hello, ${userName}
-!`)
-  console.log('Find the greatest common divisor of given numbers.')
-
-  let countCorrectAnswers = 0
-
-  while (true) {
-    const num1 = Math.floor(Math.random() * 100) + 1
-    const num2 = Math.floor(Math.random() * 100) + 1
-
-    const question = `${num1}
-${num2}`
-    const correctAnswer = getGCD(num1, num2).toString()
-
-    console.log(`Question: ${question}
-`)
-    const userAnswer = readlineSync.question('Your answer: ')
-
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!')
-      countCorrectAnswers += 1
-    }
-else {
-      console.log(`'${userAnswer}
-' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
-      console.log(`Let's try again, ${userName}
-!`)
-      return 1; // Возвращаем код ошибки
-    }
-if (countCorrectAnswers >= 3) {
-      console.log(`Congratulations, ${userName}
-!`)
-      return 0; // Успешное завершение
-    }
-}
-}
-// Запуск игры при выполнении скрипта
-if (require.main === module) {
-  process.exit(playGame())
+  return gcd(b, a % b);
 }
 
+console.log('Welcome to the Brain Games!');
+const name = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${name}!`);
+console.log('Find the greatest common divisor of given numbers.');
+
+const rounds = 3;
+for (let i = 0; i < rounds; i++) {
+  const num1 = getRandomInt(1, 100);
+  const num2 = getRandomInt(1, 100);
+  const question = `${num1} ${num2}`;
+  const correctAnswer = gcd(num1, num2).toString();
+
+  const answer = readlineSync.question(`Question: ${question}\nYour answer: `);
+
+  if (answer !== correctAnswer) {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${name}!`);
+    process.exit(0);
+  } else {
+    console.log('Correct!');
+  }
+}
+
+console.log(`Congratulations, ${name}!`);
