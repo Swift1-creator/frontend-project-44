@@ -13,7 +13,7 @@ for (let i = 0; i < rounds; i++) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
     console.log(`Let's try again, ${name}!`)
     process.exit(0)
-  } 
+}
   else {
     console.log('Correct!')
   }
