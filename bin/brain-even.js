@@ -21,4 +21,5 @@ for (let i = 0; i < rounds; i++) {
     console.log('Correct!');
   }
 }
+
 console.log(`Congratulations, ${name}!`);
