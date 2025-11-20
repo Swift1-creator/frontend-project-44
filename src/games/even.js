@@ -4,6 +4,7 @@ const roundsCount = 3
 
 export default function runEvenGame() {
   console.log('Welcome to the Brain Even!')
+  console.log('Answer "yes" if the number is even, otherwise answer "no".')
   const name = readlineSync.question('May I have your name? ')
   console.log(`Hello, ${name}!`)
 
@@ -16,7 +17,7 @@ export default function runEvenGame() {
     if ((answer.toLowerCase() === 'yes' && correctAnswer === 'yes') ||
         (answer.toLowerCase() === 'no' && correctAnswer === 'no')) {
       console.log('Correct!')
-}
+    }
     else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
       console.log(`Let's try again, ${name}!`)

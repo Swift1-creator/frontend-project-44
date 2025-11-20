@@ -9,6 +9,7 @@ function getGCD(a, b) {
 
 export default function runGcdGame() {
   console.log('Welcome to the Brain GCD!')
+  console.log('Find the greatest common divisor of given numbers.')
   const name = readlineSync.question('May I have your name? ')
   console.log(`Hello, ${name}!`)
 
@@ -23,8 +24,8 @@ export default function runGcdGame() {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
       console.log(`Let's try again, ${name}!`)
       return
-} 
-  else {
+    }
+    else {
       console.log('Correct!')
     }
   }
