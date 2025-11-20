@@ -22,8 +22,8 @@ export default function runPrimeGame() {
     const answer = readlineSync.question(`${question}\nYour answer: `)
     const correctAnswer = isPrime(number) ? 'yes' : 'no'
 
-    if ((answer.toLowerCase() === 'yes' && correctAnswer === 'yes') ||
-        (answer.toLowerCase() === 'no' && correctAnswer === 'no')) {
+    if ((answer.toLowerCase() === 'yes' && correctAnswer === 'yes') 
+      || (answer.toLowerCase() === 'no' && correctAnswer === 'no')) {
       console.log('Correct!')
     }
     else {
