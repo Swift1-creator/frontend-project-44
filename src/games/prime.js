@@ -11,8 +11,8 @@ function isPrime(n) {
 }
 
 export default function runPrimeGame() {
+  console.log('Answer "yes" if the number is prime, otherwise answer "no".') // добавлено описание
   console.log('Welcome to the Brain Prime!')
-  console.log('Answer "yes" if the number is prime, otherwise answer "no".')
   const name = readlineSync.question('May I have your name? ')
   console.log(`Hello, ${name}!`)
 
