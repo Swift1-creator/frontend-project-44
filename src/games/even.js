@@ -15,8 +15,8 @@ export default function runEvenGame() {
     const correctAnswer = (number % 2 === 0) ? 'yes' : 'no'
 
     if (
-      (answer.toLowerCase() === 'yes' && correctAnswer === 'yes') ||
-      (answer.toLowerCase() === 'no' && correctAnswer === 'no')
+      (answer.toLowerCase() === 'yes' && correctAnswer === 'yes')
+      || (answer.toLowerCase() === 'no' && correctAnswer === 'no')
     ) {
       console.log('Correct!')
     }
