@@ -3,6 +3,7 @@ import readlineSync from 'readline-sync'
 const roundsCount = 3
 
 export default function runCalcGame() {
+  console.log('What is the result of the expression?') // добавлено описание
   console.log('Welcome to the Brain Calc!')
   const name = readlineSync.question('May I have your name? ')
   console.log(`Hello, ${name}!`)
