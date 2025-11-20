@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync'
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
+
 function generateProgression(start, step, length) {
   const progression = []
   for (let i = 0; i < length; i++) {
@@ -10,12 +12,16 @@ function generateProgression(start, step, length) {
   }
   return progression
 }
+
 console.log('Welcome to the Brain Games!')
 const name = readlineSync.question('May I have your name? ')
 console.log(`Hello, ${name}!`)
 console.log('What number is missing in the progression?')
+
 const rounds = 3
+console.log('Starting the game...') // Отладка
 for (let i = 0; i < rounds; i++) {
+  console.log(`Round ${i + 1} of ${rounds}`) // Отладка
   const start = getRandomInt(1, 50)
   const step = getRandomInt(1, 10)
   const length = getRandomInt(5, 10)
@@ -30,9 +36,9 @@ for (let i = 0; i < rounds; i++) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
     console.log(`Let's try again, ${name}!`)
     process.exit(0)
-  }
-  else {
+  } else {
     console.log('Correct!')
   }
 }
 console.log(`Congratulations, ${name}!`)
+console.log('Game finished.') // Отладка
